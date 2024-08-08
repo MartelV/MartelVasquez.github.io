@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martel Vasquez Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #b0c4de;
+            overflow-x: hidden;
+        }
+
+        .main-image-container {
+            position: relative;
+            height: 100vh;
+            background: url('portfolioHeader.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .main-image-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        .name-bar {
+            position: absolute;
+            top: 20px; /* Adjust this value to move the bar up or down */
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+            z-index: 2;
+        }
+
+        .name-bar nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+
+        .name-bar a {
+            color: #b0c4de;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+
+        .name-bar a:hover {
+            color: #00bfff;
+        }
+
+        .name-bar span {
+            font-size: 1.5em;
+            color: #fff;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #00bfff;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .content {
+            padding: 20px;
+            width: 100%;
+        }
+
+        .content h2 {
+            color: #00bfff;
+            text-align: center;
+        }
+
+        .content section {
+            margin: 40px 0;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+            border-top: 2px solid #00bfff;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #b0c4de;
+        }
+    </style>
+</head>
+<body>
+    <div class="name-bar">
+        <nav>
+            <a href="#about">About</a>
+            <span>Martel Vasquez</span>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+    <div class="main-image-container"></div>
+    <header>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <div class="content">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm Martel Vasquez, a passionate web developer and writer. Explore my projects and get to know more about my work and experiences.</p>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>Here are some of my recent projects...</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>You can reach me at...</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Martel Vasquez. All rights reserved.</p>
+    </footer>
+</body>
+</html>
