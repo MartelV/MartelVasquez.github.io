@@ -1,0 +1,140 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #111;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+}
+
+/* Intro Section with Zoom-in and Text Pop Animation */
+.intro {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('portfolioHeader.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: zoomIn 3s ease forwards;
+    overflow: hidden;
+}
+
+.intro-content {
+    text-align: center;
+    opacity: 0;
+    animation: textPop 3s ease forwards 2s; /* Delay text pop animation */
+}
+
+.intro-content h1 {
+    font-size: 60px;
+    margin: 0;
+    font-weight: 300;
+    color: #00bfff; /* Bright blue accent color */
+}
+
+.intro-content p {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 10px 0 0;
+    color: #00bfff;
+}
+
+/* Keyframes for Zoom-in Animation */
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Keyframes for Text Pop Animation */
+@keyframes textPop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Navbar Styles */
+.navbar {
+    background: #f0f0f0;
+    color: #111;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    color: #00bfff; /* Bright blue accent color */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar ul li a:hover {
+    color: #111;
+}
+
+/* Section Styles */
+section {
+    margin: 40px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 36px;
+    color: #00bfff; /* Bright blue accent color */
+    margin-bottom: 20px;
+}
+
+section p, section li {
+    color: #111;
+}
+
+section h3 {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #00bfff; /* Bright blue accent color */
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background: #111;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}

@@ -3,150 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martel Vasquez Portfolio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #b0c4de;
-            overflow-x: hidden;
-        }
-
-        .main-image-container {
-            position: relative;
-            height: 100vh;
-            background: url('portfolioHeader.jpg') no-repeat center center;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-size: 2.5em;
-            text-align: center;
-        }
-
-        .main-image-container::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: inherit;
-            filter: blur(10px);
-            z-index: -1;
-        }
-
-        .name-bar {
-            position: absolute;
-            top: 20px; /* Adjust this value to move the bar up or down */
-            width: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px 0;
-            z-index: 2;
-        }
-
-        .name-bar nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            width: 100%;
-        }
-
-        .name-bar a {
-            color: #b0c4de;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-        }
-
-        .name-bar a:hover {
-            color: #00bfff;
-        }
-
-        .name-bar span {
-            font-size: 1.5em;
-            color: #fff;
-        }
-
-        header {
-            background-color: #1a1a1a;
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #00bfff;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 2;
-        }
-
-        .content {
-            padding: 20px;
-            width: 100%;
-        }
-
-        .content h2 {
-            color: #00bfff;
-            text-align: center;
-        }
-
-        .content section {
-            margin: 40px 0;
-        }
-
-        footer {
-            background-color: #1a1a1a;
-            padding: 10px;
-            text-align: center;
-            border-top: 2px solid #00bfff;
-            width: 100%;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 0.9em;
-            color: #b0c4de;
-        }
-    </style>
+    <title>Martel Vasquez | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="name-bar">
-        <nav>
-            <a href="#about">About</a>
-            <span>Martel Vasquez</span>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <!-- Intro Section -->
+    <div class="intro">
+        <div class="intro-content">
+            <h1>Martel Vasquez</h1>
+            <p>Aspiring Software Engineer | Problem Solver | Code Enthusiast</p>
+        </div>
     </div>
-    <div class="main-image-container"></div>
-    <header>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    <div class="content">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm Martel Vasquez, a passionate web developer and writer. Explore my projects and get to know more about my work and experiences.</p>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Here are some of my recent projects...</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>You can reach me at...</p>
-        </section>
-    </div>
+
+    <!-- Main Content -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>I’m currently pursuing a Bachelor's Degree in Computer Science at George Mason University, with an expected graduation in May 2025. With a GPA of 3.75, I've honed my skills in various programming languages and have undertaken numerous projects that demonstrate my abilities in software engineering.</p>
+        <h3>Skills</h3>
+        <ul>
+            <li>Java</li>
+            <li>C</li>
+            <li>Python</li>
+            <li>ArcGIS</li>
+            <li>Assembly</li>
+            <li>HTML</li>
+        </ul>
+        <h3>Education</h3>
+        <p>George Mason University, Fairfax, VA<br>Bachelor's Degree in Computer Science (2021 – Anticipated: May 2025)</p>
+        <p>GPA: 3.75</p>
+        <h3>Relevant Coursework</h3>
+        <ul>
+            <li>Data Structures & Algorithms</li>
+            <li>Secure Programming and Systems</li>
+            <li>Formal Methods & Models</li>
+            <li>Computer Systems & Programming</li>
+            <li>Object-Oriented Programming</li>
+            <li>Intro to Low-level Programming</li>
+            <li>Essentials of CS</li>
+            <li>Calc 1, 2, & 3</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <!-- Project Details -->
+        <!-- Add project details here -->
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p>Fairfax, VA 22030</p>
+        <p>Phone: 703-649-1479</p>
+        <p>Email: <a href="mailto:MartelVasquez31@gmail.com">MartelVasquez31@gmail.com</a></p>
+        <p><a href="https://github.com/MartelV" target="_blank">GitHub</a></p>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Martel Vasquez. All rights reserved.</p>
+        <div class="container">
+            <p>© 2024 Martel Vasquez. All Rights Reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
