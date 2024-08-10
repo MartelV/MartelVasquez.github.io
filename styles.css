@@ -89,6 +89,7 @@ body {
     color: #00bfff; /* Bright blue accent color */
     text-decoration: none;
     font-size: 18px;
+    transition: color 0.3s ease; /* Smooth transition on hover */
 }
 
 .navbar ul li a:hover {
@@ -102,27 +103,34 @@ section {
     background: #fff;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+section:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
 }
 
 section h2 {
     font-size: 36px;
     color: #00bfff; /* Bright blue accent color */
     margin-bottom: 20px;
+    transition: color 0.3s ease; /* Smooth transition on hover */
 }
 
 section p, section li {
     color: #111;
+    transition: color 0.3s ease; /* Smooth transition on hover */
 }
 
 section h3 {
     font-size: 24px;
     margin-top: 20px;
     color: #00bfff; /* Bright blue accent color */
+    transition: color 0.3s ease; /* Smooth transition on hover */
 }
 
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
+section:hover h2, section:hover p, section:hover li, section:hover h3 {
+    color: #005f99; /* Darker blue accent on hover */
 }
 
 /* Footer Styles */
@@ -137,4 +145,20 @@ footer {
 footer p {
     margin: 0;
     font-size: 14px;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+footer:hover p {
+    color: #00bfff; /* Bright blue accent color on hover */
+}
+
+/* Adding hover effects for Contact links */
+#contact a {
+    color: #00bfff;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+#contact a:hover {
+    color: #005f99; /* Darker blue on hover */
 }
