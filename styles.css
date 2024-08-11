@@ -4,161 +4,98 @@ body {
     color: #111;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    background-color: #f0f0f0;
+    line-height: 1.8;
+    font-size: 20px;
 }
 
-/* Intro Section with Zoom-in and Text Pop Animation */
-.intro {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    background: url('portfolioHeader.jpg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: zoomIn 3s ease forwards;
-    overflow: hidden;
-}
-
-.intro-content {
-    text-align: center;
-    opacity: 0;
-    animation: textPop 3s ease forwards 2s; /* Delay text pop animation */
-}
-
-.intro-content h1 {
-    font-size: 60px;
-    margin: 0;
-    font-weight: 300;
-    color: #00bfff; /* Bright blue accent color */
-}
-
-.intro-content p {
-    font-size: 24px;
-    font-weight: 300;
-    margin: 10px 0 0;
-    color: #00bfff;
-}
-
-/* Keyframes for Zoom-in Animation */
-@keyframes zoomIn {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.1);
-    }
-}
-
-/* Keyframes for Text Pop Animation */
-@keyframes textPop {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* Navbar Styles */
+/* Navigation Bar */
 .navbar {
-    background: #f0f0f0;
-    color: #111;
-    padding: 15px 0;
-    text-align: center;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    padding: 10px;
+    z-index: 1000; /* Make sure it stays on top */
+    transition: top 0.3s;
 }
 
 .navbar ul {
-    padding: 0;
-    list-style: none;
     margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar ul li {
-    display: inline;
-    margin: 0 20px;
+    margin: 0 15px;
+}
+
+.navbar ul li.separator {
+    color: #fff; /* White color for the separators */
+    font-size: 20px;
 }
 
 .navbar ul li a {
-    color: #00bfff; /* Bright blue accent color */
+    color: #fff;
     text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease; /* Smooth transition on hover */
+    font-size: 20px;
 }
 
-.navbar ul li a:hover {
-    color: #111;
+/* Hero Header */
+.hero-header {
+    background-image: url('portfolioHeader.jpg'); /* Replace with your header image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Makes the image stay fixed while scrolling */
+    height: 100vh; /* Full screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-header h1 {
+    color: #fff; /* White text color */
+    font-size: 72px; /* Adjust font size as needed */
+    margin: 0;
 }
 
 /* Section Styles */
-section {
-    margin: 40px 0;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+.section {
+    padding: 60px 20px;
+    text-align: center;
 }
 
-section:hover {
-    transform: scale(1.02); /* Slight zoom on hover */
+/* Section Headers */
+.header h2 {
+    font-size: 48px;
+    margin-bottom: 40px;
+    color: #fff;
 }
 
-section h2 {
-    font-size: 36px;
-    color: #00bfff; /* Bright blue accent color */
-    margin-bottom: 20px;
-    transition: color 0.3s ease; /* Smooth transition on hover */
+/* Background Colors */
+.blue-ribbon {
+    background-color: #0066cc; /* Blue Ribbon background */
 }
 
-section p, section li {
-    color: #111;
-    transition: color 0.3s ease; /* Smooth transition on hover */
+.shark-color {
+    background-color: #343f4b; /* Shark color background */
 }
 
-section h3 {
-    font-size: 24px;
-    margin-top: 20px;
-    color: #00bfff; /* Bright blue accent color */
-    transition: color 0.3s ease; /* Smooth transition on hover */
+.ghost-color {
+    background-color: #f8f8ff; /* Ghost color background */
+    color: #000 !important; /* Black font for better contrast */
 }
 
-section:hover h2, section:hover p, section:hover li, section:hover h3 {
-    color: #005f99; /* Darker blue accent on hover */
+.malibu-color {
+    background-color: #80c0ff; /* Malibu color background */
+    color: #111; /* Dark font for better contrast */
 }
 
 /* Footer Styles */
 footer {
-    background: #111;
-    color: #f0f0f0;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-}
-
-footer p {
-    margin: 0;
-    font-size: 14px;
-    transition: color 0.3s ease; /* Smooth transition on hover */
-}
-
-footer:hover p {
-    color: #00bfff; /* Bright blue accent color on hover */
-}
-
-/* Adding hover effects for Contact links */
-#contact a {
-    color: #00bfff;
-    text-decoration: none;
-    transition: color 0.3s ease; /* Smooth transition on hover */
-}
-
-#contact a:hover {
-    color: #005f99; /* Darker blue on hover */
+    padding: 20px;
+    font-size: 18px;
 }
