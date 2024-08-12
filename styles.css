@@ -17,6 +17,9 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #111; /* Dark background for the intro */
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
 }
 
 .intro-circle {
@@ -25,6 +28,20 @@ body {
     border-radius: 50%;
     background-color: #fff; /* White circle */
     cursor: pointer;
+    transition: all 1s ease;
+}
+
+/* Expanded Circle */
+.intro.expanded .intro-circle {
+    width: 3000px;
+    height: 3000px;
+    border-radius: 0;
+    background-color: transparent; /* Transparent to reveal the header */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
 }
 
 /* Hero Header */
@@ -32,12 +49,20 @@ body {
     background-image: url('portfolioHeader.jpg'); /* Replace with your header image path */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Makes the image stay fixed while scrolling */
-    height: 100vh; /* Full screen height */
+    background-attachment: fixed;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+    position: relative;
+    z-index: 8;
+}
+
+.intro.hidden + .hero-header {
+    opacity: 1;
 }
 
 /* Navigation Bar */
@@ -46,10 +71,10 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 15px 0;
     z-index: 1000;
-    transition: top 0.3s; /* Smooth hiding and showing */
+    transition: top 0.3s;
 }
 
 .navbar ul {
@@ -93,21 +118,21 @@ body {
 
 /* Background Colors */
 .blue-ribbon {
-    background-color: #0066cc; /* Blue Ribbon background */
+    background-color: #0066cc;
 }
 
 .shark-color {
-    background-color: #343f4b; /* Shark color background */
+    background-color: #343f4b;
 }
 
 .ghost-color {
-    background-color: #f8f8ff; /* Ghost color background */
-    color: #000 !important; /* Black font for better contrast */
+    background-color: #f8f8ff;
+    color: #000 !important;
 }
 
 .malibu-color {
-    background-color: #80c0ff; /* Malibu color background */
-    color: #111; /* Dark font for better contrast */
+    background-color: #80c0ff;
+    color: #111;
 }
 
 /* Footer Styles */
@@ -121,9 +146,9 @@ footer {
     position: fixed;
     left: 5px;
     top: 3px;
-    width: 50px; /* Adjust the size as needed */
+    width: 50px;
     height: auto;
-    animation: spin 5s linear infinite; /* Faster spin animation */
+    animation: spin 5s linear infinite;
 }
 
 /* Logo Animation */

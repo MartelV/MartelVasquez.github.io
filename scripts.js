@@ -1,21 +1,31 @@
-// JavaScript for intro scroll effect
-document.querySelector('.intro-circle').addEventListener('click', function() {
-    document.querySelector('.intro').style.display = 'none'; // Hide intro section
-    document.querySelector('.hero-header').scrollIntoView({ behavior: 'smooth' });
+// JavaScript for intro scroll effect and circle expansion on scroll
+window.addEventListener('scroll', function() {
+    const scrollY = window.scrollY;
+    const intro = document.querySelector('.intro');
+    const heroHeader = document.querySelector('.hero-header');
+
+    if (scrollY > 0) {
+        intro.classList.add('expanded');
+
+        setTimeout(function() {
+            intro.classList.add('hidden');
+            heroHeader.style.opacity = '1'; // Ensure the header image is visible
+        }, 1000); // Delay to allow the expansion to complete before hiding
+    }
 });
 
 // JavaScript to handle navigation bar disappearing on scroll
 window.addEventListener('scroll', function() {
     const scrollY = window.scrollY;
     const navbar = document.querySelector('.navbar');
-    if (scrollY > 100) { // Adjust the value (100) as needed for when you want the navbar to disappear
-        navbar.style.top = '-100px'; // Move the navbar out of view
+    if (scrollY > 100) {
+        navbar.style.top = '-100px';
     } else {
-        navbar.style.top = '0'; // Bring the navbar back into view
+        navbar.style.top = '0';
     }
 });
 
 // JavaScript to refresh the page when the logo is clicked
 document.querySelector('.logo').addEventListener('click', function() {
-    location.reload(); // Refresh the page
+    location.reload();
 });
