@@ -1,46 +1,13 @@
-/* General Styles */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #111;
-    margin: 0;
-    padding: 0;
-    line-height: 1.8;
-    font-size: 20px;
-}
-
-/* Navigation Bar */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
-    padding: 10px;
-    z-index: 1000; /* Make sure it stays on top */
-    transition: top 0.3s;
-}
-
-.navbar ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.navbar ul li {
-    margin: 0 15px;
-}
-
-.navbar ul li.separator {
-    color: #fff; /* White color for the separators */
-    font-size: 20px;
-}
-
-.navbar ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 20px;
+    font-family: Arial, sans-serif;
 }
 
 /* Hero Header */
@@ -60,6 +27,44 @@ body {
     color: #fff; /* White text color */
     font-size: 72px; /* Adjust font size as needed */
     margin: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    padding: 15px 0;
+    z-index: 1000;
+    transition: top 0.3s; /* Smooth hiding and showing */
+}
+
+.navbar ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.navbar ul li.separator {
+    display: inline-block;
+    color: #fff;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ddd;
 }
 
 /* Section Styles */
@@ -98,4 +103,33 @@ body {
 footer {
     padding: 20px;
     font-size: 18px;
+}
+
+/* Logo Styles */
+.logo {
+    position: fixed;
+    left: 5px;
+    top: 3px;
+    width: 50px; /* Adjust the size as needed */
+    height: auto;
+    animation: spin 5s linear infinite, colorChange 5s linear infinite; /* Faster spin animation and color change */
+}
+
+/* Logo Animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes colorChange {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
 }
