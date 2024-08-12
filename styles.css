@@ -10,6 +10,23 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Intro Section */
+.intro {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111; /* Dark background for the intro */
+}
+
+.intro-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff; /* White circle */
+    cursor: pointer;
+}
+
 /* Hero Header */
 .hero-header {
     background-image: url('portfolioHeader.jpg'); /* Replace with your header image path */
@@ -21,12 +38,6 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-}
-
-.hero-header h1 {
-    color: #fff; /* White text color */
-    font-size: 72px; /* Adjust font size as needed */
-    margin: 0;
 }
 
 /* Navigation Bar */
@@ -112,7 +123,7 @@ footer {
     top: 3px;
     width: 50px; /* Adjust the size as needed */
     height: auto;
-    animation: spin 5s linear infinite, colorChange 5s linear infinite; /* Faster spin animation and color change */
+    animation: spin 5s linear infinite; /* Faster spin animation */
 }
 
 /* Logo Animation */
@@ -122,14 +133,5 @@ footer {
     }
     100% {
         transform: rotate(360deg);
-    }
-}
-
-@keyframes colorChange {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-    100% {
-        filter: hue-rotate(360deg);
     }
 }
