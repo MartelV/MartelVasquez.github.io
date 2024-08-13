@@ -32,6 +32,24 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Add hover effect for the outline and down arrow
+document.addEventListener("DOMContentLoaded", () => {
+    const outline = document.querySelector(".outline");
+
+    outline.addEventListener("mouseenter", () => {
+        outline.style.width = "200px";  // Increase width on hover
+        outline.style.height = "200px"; // Increase height on hover
+        outline.style.borderWidth = "5px"; // Increase border width
+        outline.style.transition = "width 0.5s ease, height 0.5s ease, border-width 0.5s ease"; // Smooth transition for all properties
+    });
+
+    outline.addEventListener("mouseleave", () => {
+        outline.style.width = "140px";  // Reset width when not hovering
+        outline.style.height = "140px"; // Reset height when not hovering
+        outline.style.borderWidth = "3px"; // Reset border width
+        outline.style.transition = "width 0.5s ease, height 0.5s ease, border-width 0.5s ease"; // Smooth transition for all properties
+    });
+});
 
 // JavaScript to handle navigation bar disappearing on scroll
 window.addEventListener('scroll', function() {

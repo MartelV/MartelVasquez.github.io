@@ -23,14 +23,39 @@ body {
     z-index: 10;
 }
 
+
 .intro-circle {
     width: 100px;
     height: 100px;
+    position: middle;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
     border-radius: 50%;
     background-color: #fff; /* White circle */
-    cursor: pointer;
     transition: all 1.5s ease;
+    z-index: 2;
 }
+
+.outline {
+    position: absolute; /* Position the outline absolutely */
+    width: 140px; /* Width larger than the circle */
+    height: 140px; /* Height larger than the circle */
+    border: 3px dotted transparent; /* Initial transparent border */
+    border-radius: 50%; /* Make it a circle */
+    animation: colorChange 2s infinite, spin 10s linear infinite;; /* Animate the color change */
+    z-index: 1; /* Position it behind the circle */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+
+@keyframes colorChange {
+    0% { border-color: red; }
+    25% { border-color: blue; }
+    50% { border-color: green; }
+    75% { border-color: yellow; }
+    100% { border-color: red; } /* Loop back to the start */
+}
+
 
 /* Expanded Circle */
 .intro.expanded .intro-circle {
@@ -42,7 +67,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(0, 0);
-    z-index: 9;
+    z-index: 1;
 }
 
 /* Hidden Intro */
@@ -64,7 +89,7 @@ body {
     align-items: center;
     text-align: center;
     opacity: 0;
-    transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in 0.5s; /* Add a delay to the opacity transition */
     position: relative;
     z-index: 8;
 }
@@ -158,7 +183,7 @@ footer {
     width: 50px;
     height: auto;
     animation: spin 5s linear infinite;
-    transition: filter 0.2s; /* Smooth transition for filter */
+    transition: filter 0.5s smooth; /* Smooth transition for filter */
 }
 
 
@@ -169,10 +194,11 @@ footer {
 /* Logo Animation */
 
 @keyframes rgb-effect {
-    0% { filter: none; }
-    33% { filter: drop-shadow(2px 0 red); }
-    66% { filter: drop-shadow(-2px 0 green); }
-    100% { filter: drop-shadow(0 2px blue); }
+    0% { filter:  drop-shadow(0 4px 4px blue); }
+    25% { filter: drop-shadow(4px 0 4px red); } /* Increased shadow and added blur */
+    50% { filter: drop-shadow(-4px 0 4px green); }
+    75% { filter: drop-shadow(0 4px 4px yellow); }
+    100% { filter: drop-shadow(0 4px 4px blue); } 
 }
 
 @keyframes spin {
@@ -183,3 +209,4 @@ footer {
         transform: rotate(360deg);
     }
 }
+
