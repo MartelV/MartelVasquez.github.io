@@ -34,21 +34,21 @@ body {
 
 /* Expanded Circle */
 .intro.expanded .intro-circle {
-    width: 5000px; /* Large enough to cover the entire viewport */
-    height: 5000px;
-    border-radius: 50%; /* Keep it round during the transition */
+    width: 3000%; /* Large enough to cover the entire viewport */
+    height: 3000%;
+    border-radius: 40%; /* Keep it round during the transition */
     background-color: #fff;
-    position: absolute;
+    position: middle;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9;
+    transform: translate(0, 0);
+    z-index: 7;
 }
 
 /* Hidden Intro */
 .intro.hidden {
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.4s ease;
     pointer-events: none;
 }
 
