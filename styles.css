@@ -8,6 +8,7 @@
 /* Body Styles */
 body {
     font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Intro Section */
@@ -28,20 +29,27 @@ body {
     border-radius: 50%;
     background-color: #fff; /* White circle */
     cursor: pointer;
-    transition: all 1s ease;
+    transition: all 1.5s ease;
 }
 
 /* Expanded Circle */
 .intro.expanded .intro-circle {
-    width: 3000px;
-    height: 3000px;
-    border-radius: 0;
-    background-color: transparent; /* Transparent to reveal the header */
+    width: 5000px; /* Large enough to cover the entire viewport */
+    height: 5000px;
+    border-radius: 50%; /* Keep it round during the transition */
+    background-color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9;
+}
+
+/* Hidden Intro */
+.intro.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
 }
 
 /* Hero Header */
@@ -56,13 +64,14 @@ body {
     align-items: center;
     text-align: center;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 1s ease-in;
     position: relative;
     z-index: 8;
 }
 
 .intro.hidden + .hero-header {
     opacity: 1;
+    transition: opacity 1s ease-in;
 }
 
 /* Navigation Bar */
