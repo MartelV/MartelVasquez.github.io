@@ -36,13 +36,13 @@ body {
 .intro.expanded .intro-circle {
     width: 3000%; /* Large enough to cover the entire viewport */
     height: 3000%;
-    border-radius: 40%; /* Keep it round during the transition */
+    border-radius: 30%; /* Keep it round during the transition */
     background-color: #fff;
     position: middle;
     top: 50%;
     left: 50%;
     transform: translate(0, 0);
-    z-index: 7;
+    z-index: 9;
 }
 
 /* Hidden Intro */
@@ -54,7 +54,7 @@ body {
 
 /* Hero Header */
 .hero-header {
-    background-image: url('portfolioHeader.jpg'); /* Replace with your header image path */
+    background-image: url('portfolioHeader.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -158,9 +158,23 @@ footer {
     width: 50px;
     height: auto;
     animation: spin 5s linear infinite;
+    transition: filter 0.2s; /* Smooth transition for filter */
+}
+
+
+.logo-invert {
+    animation: rgb-effect 2s infinite, spin 5s linear infinite;; /* Apply the RGB effect animation */
 }
 
 /* Logo Animation */
+
+@keyframes rgb-effect {
+    0% { filter: none; }
+    33% { filter: drop-shadow(2px 0 red); }
+    66% { filter: drop-shadow(-2px 0 green); }
+    100% { filter: drop-shadow(0 2px blue); }
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0deg);

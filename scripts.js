@@ -32,16 +32,22 @@ window.addEventListener('scroll', function() {
     }
 });
 
+
 // JavaScript to handle navigation bar disappearing on scroll
 window.addEventListener('scroll', function() {
     const scrollY = window.scrollY;
     const navbar = document.querySelector('.navbar');
+    const logo = document.querySelector('.logo');
+
     if (scrollY > 100) {
         navbar.style.top = '-100px';
+        logo.classList.add('logo-invert'); // Add the logo-invert class
     } else {
         navbar.style.top = '0';
+        logo.classList.remove('logo-invert'); // Remove the logo-invert class
     }
 });
+
 
 // JavaScript to refresh the page when the logo is clicked
 document.querySelector('.logo').addEventListener('click', function() {
