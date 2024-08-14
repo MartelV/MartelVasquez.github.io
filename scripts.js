@@ -13,8 +13,8 @@ window.addEventListener('scroll', function() {
             setTimeout(function() {
                 intro.parentNode.removeChild(intro);
                 window.scrollTo({
-                    top: window.top, // Lock scroll to the hero header
-                    behavior: 'smooth' // Instant scroll without smooth behavior
+                    top: 0, // Scroll to the top of the page
+                    behavior: 'smooth' // Smooth scroll to the top
                 });
             }, 100); 
         }, 1000); // Delay to allow the expansion to complete before hiding
@@ -26,8 +26,8 @@ window.addEventListener('scroll', function() {
 
         // Lock scroll up by setting the scroll position to the top of the hero header
         window.scrollTo({
-            top: window.top,
-            behavior: 'smooth'
+            top: 0, // Scroll to the top of the page
+            behavior: 'smooth' // Smooth scroll to the top
         });
     }
 });
@@ -66,8 +66,16 @@ window.addEventListener('scroll', function() {
     }
 });
 
-
 // JavaScript to refresh the page when the logo is clicked
 document.querySelector('.logo').addEventListener('click', function() {
     location.reload();
+});
+
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, 75); // Adjust the timeout as necessary
 });

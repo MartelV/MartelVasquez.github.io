@@ -23,7 +23,6 @@ body {
     z-index: 10;
 }
 
-
 .intro-circle {
     width: 100px;
     height: 100px;
@@ -47,7 +46,6 @@ body {
     transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
 
-
 @keyframes colorChange {
     0% { border-color: red; }
     25% { border-color: blue; }
@@ -55,7 +53,6 @@ body {
     75% { border-color: yellow; }
     100% { border-color: red; } /* Loop back to the start */
 }
-
 
 /* Expanded Circle */
 .intro.expanded .intro-circle {
@@ -143,16 +140,75 @@ body {
     text-align: center;
 }
 
-/* Section Headers */
-.header h2 {
-    font-size: 48px;
-    margin-bottom: 40px;
-    color: #fff;
-}
-
 /* Background Colors */
 .blue-ribbon {
     background-color: #0066cc;
+}
+
+/* Flexbox container for the About Me section */
+.about-content {
+    display: flex;
+    align-items: stretch; /* Align items to stretch to the same height */
+    justify-content: center; /* Center the content */
+    padding: 50px;
+}
+
+/* About Section Layout */
+.about-container {
+    display: flex;
+    align-items: stretch; /* Ensure both sides take equal height */
+    flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+}
+
+/* Adjust flex properties for the text and media containers */
+.about-text {
+    flex: 1; /* Reduce the space taken by text side */
+    min-width: 100px; /* Ensure the text doesn't get too narrow */
+    margin-right: 20px; /* Space between text and media */
+    color: #fff; /* Ensure text color contrasts with the background */
+    display: flex; /* Enable flexbox on text */
+    flex-direction: column; /* Stack header and paragraph */
+    justify-content: center; /* Center the text vertically */
+    height: 100%; /* Allow text to take full height */
+}
+
+.about-media {
+    flex: 2; /* Increase the space taken by the media side */
+    max-width: 1200px; /* Ensure it doesn't exceed the size of the video */
+    display: flex;
+    flex-direction: column; /* Stack image and video */
+    align-items: left; /* Center items horizontally */
+    gap: 30px; /* Add space between the image and the video */
+}
+
+.about-media img {
+    max-width: 100%; /* Ensure image responsiveness */
+    height: 450px;
+    margin-bottom: 20px;
+    cursor: pointer; /* Add a pointer cursor to the image */
+}
+
+.about-media iframe {
+    width: 300%; /* Make the video responsive */
+    height: 450px; /* Increase height for better visibility */
+    max-width: 800px; /* Increase the maximum width */
+    display: block; /* Ensures proper alignment */
+    border: none; /* Removes border around the iframe */
+    margin: 0 auto; /* Center the video horizontally */
+}
+
+#about h2 {
+    font-size: 60px; /* Larger font size for the header */
+    margin-bottom: 20px; /* Add more spacing between the header and the text */
+    color: #fff;
+    gap: 30px; 
+}
+
+#about p {
+    font-size: 30px; /* Larger font size for the text */
+    line-height: 3; /* Increase line height for more vertical space */
+    margin-bottom: 40px; /* Add more space at the bottom */
+    color: #fff;
 }
 
 .shark-color {
@@ -186,13 +242,11 @@ footer {
     transition: filter 0.5s smooth; /* Smooth transition for filter */
 }
 
-
 .logo-invert {
     animation: rgb-effect 2s infinite, spin 5s linear infinite;; /* Apply the RGB effect animation */
 }
 
 /* Logo Animation */
-
 @keyframes rgb-effect {
     0% { filter:  drop-shadow(0 4px 4px blue); }
     25% { filter: drop-shadow(4px 0 4px red); } /* Increased shadow and added blur */
@@ -209,4 +263,3 @@ footer {
         transform: rotate(360deg);
     }
 }
-
