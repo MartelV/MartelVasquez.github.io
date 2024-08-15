@@ -140,9 +140,15 @@ body {
     text-align: center;
 }
 
-/* Background Colors */
-.blue-ribbon {
-    background-color: #0066cc;
+/* Initial background color */
+#about.blue-ribbon {
+    background-color: #5A7FC8; 
+    transition: background-color 0.5s ease; /* Smooth transition */
+}
+
+/* Background color when the section is in view */
+#about.blue-ribbon.in-view {
+    background-color:  #252E8A; /* Change to dark blue when in view */
 }
 
 /* Flexbox container for the About Me section */
@@ -231,6 +237,7 @@ body {
     transform: scale(1.1);
 }
 
+
 #about h2 {
     font-size: 60px; /* Larger font size for the header */
     margin-bottom: 20px; /* Add more spacing between the header and the text */
@@ -245,9 +252,70 @@ body {
     color: #fff;
 }
 
-.shark-color {
-    background-color: #343f4b;
+
+/* Projects Section Layout */
+.project-section {
+    padding: 50px; /* Add padding for the section */
 }
+
+/* Initial background color */
+.project-section.pinkpurple {
+    background-color: #5A7FC8; 
+    transition: background-color 0.5s ease; /* Smooth transition */
+}
+
+/* Background color when the section is in view */
+.project-section.pinkpurple.in-view {
+    background-color: #0E0E34; /* Change to dark blue when in view */
+}
+
+/* Centered header for the Projects section */
+.projects-container {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 60px; /* Same as About Me header */
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Flexbox container for the Projects boxes */
+.project-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Space between the boxes */
+}
+
+/* Individual project box */
+.project-box {
+    flex: 1; 
+    max-width: 350px; /* Increase max width for bigger boxes */
+    background-color: #252E8A; /* Darker shade for contrast */
+    color: #fff;
+    padding: 30px; /* Increase padding for larger boxes */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.project-box:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-color: #9A4D87; /* Blue color on hover */
+}
+
+.project-box h3 {
+    font-size: 30px; /* Font size for the project box titles */
+    margin-bottom: 10px;
+}
+
+.project-box p {
+    font-size: 20px; /* Font size for the project descriptions */
+    line-height: 1.6;
+}
+
 
 .ghost-color {
     background-color: #f8f8ff;
@@ -274,6 +342,7 @@ footer {
     height: auto;
     animation: spin 5s linear infinite;
     transition: filter 0.5s smooth; /* Smooth transition for filter */
+    cursor:pointer;
 }
 
 .logo-invert {

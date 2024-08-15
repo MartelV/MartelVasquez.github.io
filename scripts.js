@@ -66,6 +66,37 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// JavaScript code for handling the in-view class application with a delay
+window.addEventListener('scroll', function() {
+    const aboutSection = document.querySelector('#about');
+    const projectSection = document.querySelector('.project-section');
+    
+    // Check if the About section is in view with a delay
+    if (isInView(aboutSection, 0.50)) { // 25% of the section must be in view
+        aboutSection.classList.add('in-view');
+    } else {
+        aboutSection.classList.remove('in-view');
+    }
+
+    // Check if the Projects section is in view with a delay
+    if (isInView(projectSection, 0.50)) { // 25% of the section must be in view
+        projectSection.classList.add('in-view');
+    } else {
+        projectSection.classList.remove('in-view');
+    }
+});
+
+// Function to check if a section is in view with a threshold
+function isInView(element, threshold = 0.5) { // Default threshold is 50%
+    const rect = element.getBoundingClientRect();
+    const elementHeight = rect.height;
+
+    return (
+        rect.top + elementHeight * threshold < window.innerHeight &&
+        rect.bottom - elementHeight * threshold >= 0
+    );
+}
+
 // JavaScript to refresh the page when the logo is clicked
 document.querySelector('.logo').addEventListener('click', function() {
     location.reload();
