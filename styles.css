@@ -372,20 +372,31 @@ body {
     transform: translateY(-5px); /* Slight lift effect on hover */
 }
 
-
+/* Contact Section Styling */
 .ghost-color {
     background-color: #f8f8ff;
-    color: #000 !important;
+    color: #252E8A !important; /* Change font color */
+    transition: filter 0.5s ease-out, opacity 0.5s ease-out;
+    filter: blur(10px);
+    opacity: 0;
 }
 
-.malibu-color {
-    background-color: #80c0ff;
+/* Clear blur and opacity when section is in view */
+.ghost-color.in-view {
+    filter: blur(0);
+    opacity: 1;
+}
+
+
+
+.gray-bottom{
+    background-color: #e2dfdf;
     color: #111;
 }
 
 /* Footer Styles */
 footer {
-    padding: 20px;
+    padding: 15px;
     font-size: 18px;
 }
 

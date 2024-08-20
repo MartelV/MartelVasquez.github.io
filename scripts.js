@@ -70,19 +70,27 @@ window.addEventListener('scroll', function() {
 window.addEventListener('scroll', function() {
     const aboutSection = document.querySelector('#about');
     const projectSection = document.querySelector('.project-section');
-    
+    const contactSection = document.querySelector('#contact'); // Added contact section
+
     // Check if the About section is in view with a delay
-    if (isInView(aboutSection, 0.50)) { // 25% of the section must be in view
+    if (isInView(aboutSection, 0.50)) { // 50% of the section must be in view
         aboutSection.classList.add('in-view');
     } else {
         aboutSection.classList.remove('in-view');
     }
 
     // Check if the Projects section is in view with a delay
-    if (isInView(projectSection, 0.50)) { // 25% of the section must be in view
+    if (isInView(projectSection, 0.50)) { // 50% of the section must be in view
         projectSection.classList.add('in-view');
     } else {
         projectSection.classList.remove('in-view');
+    }
+
+    // Check if the Contact section is in view
+    if (isInView(contactSection, 0.50)) { // 50% of the section must be in view
+        contactSection.classList.add('in-view');
+    } else {
+        contactSection.classList.remove('in-view');
     }
 });
 
