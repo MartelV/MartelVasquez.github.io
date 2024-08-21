@@ -371,14 +371,16 @@ body {
     background-color:  #73a0af; /* Background color on hover */
     transform: translateY(-5px); /* Slight lift effect on hover */
 }
-
 /* Contact Section Styling */
 .ghost-color {
     background-color: #f8f8ff;
     color: #252E8A !important; /* Change font color */
+    font-size: 40px;
     transition: filter 0.5s ease-out, opacity 0.5s ease-out;
     filter: blur(10px);
     opacity: 0;
+    padding: 80px;
+    text-align: center; /* Center the content horizontally */
 }
 
 /* Clear blur and opacity when section is in view */
@@ -387,7 +389,30 @@ body {
     opacity: 1;
 }
 
+/* Contact Buttons Styling */
+.contact-buttons {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 60px; /* Increase space between each button */
+    margin-top: 30px; /* Add some space above the buttons */
+}
 
+.contact-button {
+    display: inline-block;
+    width: 80px; /* Increase the size of each button */
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.contact-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the entire image fits within the button */
+}
+
+.contact-button:hover {
+    transform: scale(1.15); /* Slightly enlarge on hover */
+}
 
 .gray-bottom{
     background-color: #e2dfdf;
