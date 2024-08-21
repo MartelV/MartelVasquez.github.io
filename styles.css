@@ -393,25 +393,46 @@ body {
 .contact-buttons {
     display: flex;
     justify-content: center; /* Center the buttons horizontally */
-    gap: 60px; /* Increase space between each button */
-    margin-top: 30px; /* Add some space above the buttons */
+    gap: 240px; /* Further increase space between each button */
+    margin-top: 90px; /* Add some space above the buttons */
 }
 
 .contact-button {
+    position: relative; /* Create a new stacking context */
     display: inline-block;
-    width: 80px; /* Increase the size of each button */
-    height: 80px;
+    width: 70px; /* Further reduce the size of the button (logo) */
+    height: 70px;
     transition: transform 0.3s ease;
+}
+
+.contact-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%; /* Keep the circles larger than the button */
+    height: 150%;
+    background-color: #da8c74; /* Initial circle color */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Place the circle behind the image */
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .contact-button img {
     width: 100%;
     height: 100%;
     object-fit: contain; /* Ensure the entire image fits within the button */
+    z-index: 1; /* Ensure the image is above the circle */
 }
 
 .contact-button:hover {
-    transform: scale(1.15); /* Slightly enlarge on hover */
+    transform: scale(1.15); /* Slightly enlarge the entire button on hover */
+}
+
+.contact-button:hover::before {
+    transform: translate(-50%, -50%) scale(1.1); /* Enlarge the circle a bit more on hover */
+    background-color: #73a0af; /* Change the circle color on hover */
 }
 
 .gray-bottom{
