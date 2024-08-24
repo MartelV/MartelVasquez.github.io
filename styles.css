@@ -458,7 +458,7 @@ body {
 /* Contact Section Styling */
 .ghost-color {
     background-color: #f8f8ff;
-    color: #252E8A !important; /* Change font color */
+    color:  #6082B6 !important; /* Change font color */
     font-size: 40px;
     transition: filter 0.5s ease-out, opacity 0.5s ease-out;
     filter: blur(10px);
@@ -496,7 +496,7 @@ body {
     left: 50%;
     width: 150%; /* Keep the circles larger than the button */
     height: 150%;
-    background-color: #da8c74; /* Initial circle color */
+    background-color: #6082B6;/* Initial circle color */
     border-radius: 50%;
     transform: translate(-50%, -50%);
     z-index: -1; /* Place the circle behind the image */
@@ -516,7 +516,7 @@ body {
 
 .contact-button:hover::before {
     transform: translate(-50%, -50%) scale(1.1); /* Enlarge the circle a bit more on hover */
-    background-color: #73a0af; /* Change the circle color on hover */
+    background-color:#ADD8E6; /* Change the circle color on hover */
 }
 
 .gray-bottom{
