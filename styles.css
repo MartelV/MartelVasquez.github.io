@@ -100,6 +100,90 @@ body {
     transition: opacity 1s ease-in;
 }
 
+/* Container for the names */
+.name-container {
+    position: relative;
+    width: 100%;
+    height: 100px; /* Adjust the height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure no overflow is visible */
+}
+
+/* Style for the first name */
+.first-name {
+    position: absolute;
+    bottom: 50%;
+    left: -100%; /* Start off-screen to the left */
+    font-size: 4em; /* Adjust font size as needed */
+    color: white;
+    animation: slideInOutLeft 5s infinite; /* Continuous animation */
+}
+
+/* Style for the last name */
+.last-name {
+    position: absolute;
+    top: 50%;
+    right: -100%; /* Start off-screen to the right */
+    font-size: 4em; /* Adjust font size as needed */
+    color: white;
+    animation: slideInOutRight 5s infinite; /* Continuous animation */
+}
+
+/* Keyframe animation for sliding in and out from the left */
+@keyframes slideInOutLeft {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    25% {
+        left: -100%;
+        opacity: 0;
+    }
+    50% {
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 1;
+    }
+    75% {
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 1;
+    }
+    100% {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+/* Keyframe animation for sliding in and out from the right */
+@keyframes slideInOutRight {
+    0% {
+        right: -100%;
+        opacity: 0;
+    }
+    25% {
+        right: -100%;
+        opacity: 0;
+    }
+    50% {
+        right: 50%;
+        transform: translateX(50%);
+        opacity: 1;
+    }
+    75% {
+        right: 50%;
+        transform: translateX(50%);
+        opacity: 1;
+    }
+    100% {
+        right: 100%;
+        opacity: 0;
+    }
+}
+
 /* Navigation Bar */
 .navbar {
     position: fixed;
