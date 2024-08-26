@@ -1,4 +1,14 @@
 // JavaScript for intro scroll effect and circle expansion on scroll
+let linkClicked = false; // Flag to track if a navigation link was clicked
+
+// Add event listeners to all navigation links to detect clicks
+const navLinks = document.querySelectorAll('nav a');
+navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        linkClicked = true;
+    });
+});
+
 window.addEventListener('scroll', function() {
     const scrollY = window.scrollY;
     const intro = document.querySelector('.intro');
@@ -12,25 +22,27 @@ window.addEventListener('scroll', function() {
             heroHeader.style.opacity = '1';
             setTimeout(function() {
                 intro.parentNode.removeChild(intro);
-                window.scrollTo({
-                    top: 0, // Scroll to the top of the page
-                    behavior: 'smooth' // Smooth scroll to the top
-                });
+                if (!linkClicked) { // Only scroll to the top if no link was clicked
+                    window.scrollTo({
+                        top: 0, // Scroll to the top of the page
+                        behavior: 'smooth' // Smooth scroll to the top
+                    });
+                }
             }, 100); 
         }, 1000); // Delay to allow the expansion to complete before hiding
     }
 
     // Remove the intro section from the DOM and lock scroll up after scrolling past the intro
-    if (scrollY >= window.innerHeight) {
-        intro.parentNode.removeChild(intro);
-
-        // Lock scroll up by setting the scroll position to the top of the hero header
-        window.scrollTo({
-            top: 0, // Scroll to the top of the page
-            behavior: 'smooth' // Smooth scroll to the top
-        });
+    if (scrollY >= window.innerHeight && !intro.parentNode.contains(intro)) {
+        if (!linkClicked) { // Only scroll up if no button was clicked
+            window.scrollTo({
+                top: 0, // Scroll to the top of the page
+                behavior: 'smooth' // Smooth scroll to the top
+            });
+        }
     }
 });
+
 
 // Add hover effect for the outline and down arrow
 document.addEventListener("DOMContentLoaded", () => {
@@ -70,7 +82,7 @@ window.addEventListener('scroll', function() {
 window.addEventListener('scroll', function() {
     const aboutSection = document.querySelector('#about');
     const projectSection = document.querySelector('.project-section');
-    const contactSection = document.querySelector('#contact'); // Added contact section
+    const contactSection = document.querySelector('#contact'); 
 
     // Check if the About section is in view with a delay
     if (isInView(aboutSection, 0.50)) { // 50% of the section must be in view
@@ -116,5 +128,5 @@ window.addEventListener('load', function() {
             top: 0,
             behavior: 'smooth'
         });
-    }, 75); // Adjust the timeout as necessary
+    }, 75); 
 });
