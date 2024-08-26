@@ -119,7 +119,9 @@ function isInView(element, threshold = 0.5) { // Default threshold is 50%
 
 // JavaScript to refresh the page when the logo is clicked
 document.querySelector('.logo').addEventListener('click', function() {
+    const heroHeader = document.querySelector('.hero-header');
     location.reload();
+    heroHeader.style.opacity = '1';
 });
 
 window.addEventListener('load', function() {
