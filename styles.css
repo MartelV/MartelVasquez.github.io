@@ -90,7 +90,7 @@ body {
     align-items: center;
     text-align: center;
     opacity: 0;
-    transition: opacity 1s ease-in 0.5s; /* Add a delay to the opacity transition */
+    transition: opacity 1s ease-in 1.5s; /* Add a delay to the opacity transition */
     position: relative;
     z-index: 8;
 }

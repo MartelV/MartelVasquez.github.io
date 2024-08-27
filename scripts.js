@@ -1,5 +1,5 @@
-// JavaScript for intro scroll effect and circle expansion on scroll
 let linkClicked = false; // Flag to track if a navigation link was clicked
+let introPlayed = sessionStorage.getItem('introPlayed'); // Check if the intro has been played
 
 // Add event listeners to all navigation links to detect clicks
 const navLinks = document.querySelectorAll('nav a');
@@ -9,40 +9,38 @@ navLinks.forEach(link => {
     });
 });
 
-window.addEventListener('scroll', function() {
-    const scrollY = window.scrollY;
-    const intro = document.querySelector('.intro');
-    const heroHeader = document.querySelector('.hero-header');
+if (!introPlayed) {
+    window.addEventListener('scroll', function() {
+        const scrollY = window.scrollY;
+        const intro = document.querySelector('.intro');
+        const heroHeader = document.querySelector('.hero-header');
 
-    if (scrollY > 0 && !intro.classList.contains('expanded')) {
-        intro.classList.add('expanded');
+        if (scrollY > 0 && !intro.classList.contains('expanded')) {
+            intro.classList.add('expanded');
 
-        setTimeout(function() {
-            intro.classList.add('hidden');
-            heroHeader.style.opacity = '1';
             setTimeout(function() {
-                intro.parentNode.removeChild(intro);
-                if (!linkClicked) { // Only scroll to the top if no link was clicked
-                    window.scrollTo({
-                        top: 0, // Scroll to the top of the page
-                        behavior: 'smooth' // Smooth scroll to the top
-                    });
-                }
-            }, 100); 
-        }, 1000); // Delay to allow the expansion to complete before hiding
-    }
-
-    // Remove the intro section from the DOM and lock scroll up after scrolling past the intro
-    if (scrollY >= window.innerHeight && !intro.parentNode.contains(intro)) {
-        if (!linkClicked) { // Only scroll up if no button was clicked
-            window.scrollTo({
-                top: 0, // Scroll to the top of the page
-                behavior: 'smooth' // Smooth scroll to the top
-            });
+                intro.classList.add('hidden');
+                setTimeout(function() {
+                    heroHeader.style.opacity = '1'; // Fade in the header image after intro is hidden
+                    intro.parentNode.removeChild(intro);
+                    sessionStorage.setItem('introPlayed', 'true'); // Mark the intro as played
+                    if (!linkClicked) {
+                        window.scrollTo({
+                            top: 0, // Scroll to the top of the page
+                            behavior: 'smooth' // Smooth scroll to the top
+                        });
+                    }
+                }, 100); 
+            }, 1000); // Delay to allow the expansion to complete before hiding
         }
+    });
+} else {
+    // Immediately remove the intro if it has already been played
+    const intro = document.querySelector('.intro');
+    if (intro) {
+        intro.parentNode.removeChild(intro);
     }
-});
-
+}
 
 // Add hover effect for the outline and down arrow
 document.addEventListener("DOMContentLoaded", () => {
@@ -119,13 +117,14 @@ function isInView(element, threshold = 0.5) { // Default threshold is 50%
 
 // JavaScript to refresh the page when the logo is clicked
 document.querySelector('.logo').addEventListener('click', function() {
-    const heroHeader = document.querySelector('.hero-header');
     location.reload();
-    heroHeader.style.opacity = '1';
 });
 
 window.addEventListener('load', function() {
+    const heroHeader = document.querySelector('.hero-header');
+    heroHeader.style.opacity = '0'; // Set initial opacity to 0 to avoid premature visibility
     setTimeout(() => {
+        heroHeader.style.opacity = '1'; // Ensure header image is visible after load
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
