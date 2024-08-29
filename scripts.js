@@ -120,14 +120,15 @@ document.querySelector('.logo').addEventListener('click', function() {
     location.reload();
 });
 
-window.addEventListener('load', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const heroHeader = document.querySelector('.hero-header');
-    heroHeader.style.opacity = '0'; // Set initial opacity to 0 to avoid premature visibility
-    setTimeout(() => {
-        heroHeader.style.opacity = '1'; // Ensure header image is visible after load
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }, 75); 
+    const introPlayed = sessionStorage.getItem('introPlayed') === 'true';
+
+    if (introPlayed) {
+        // If intro has been played, ensure heroHeader is visible
+        heroHeader.classList.add('visible');
+    } else {
+        // If intro has not been played, initially hide heroHeader
+        heroHeader.style.opacity = '0'; // Ensure header is hidden initially
+    }
 });

@@ -78,6 +78,30 @@ body {
     pointer-events: none;
 }
 
+/* Arrow Animation */
+.down-arrow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    animation: arrowMove 2s infinite;
+    z-index: 3;
+    opacity: 1; /* Visible in intro */
+}
+
+@keyframes arrowMove {
+    0% { top: 0; opacity: 0; }
+    50% { top: 50px; opacity: 1; }
+    100% { top: 100px; opacity: 0; }
+}
+
+/* Hide the arrow after intro */
+.intro.hidden .down-arrow {
+    display: none;
+}
+
 /* Hero Header: Full-screen background image with central text */
 .hero-header {
     background-image: url('./images/portfolioHeader.jpg'); 
@@ -90,15 +114,15 @@ body {
     align-items: center;
     text-align: center;
     opacity: 0;
-    transition: opacity 1s ease-in 1.5s; /* Add a delay to the opacity transition */
+    transition: opacity 1.5s ease-in;
     position: relative;
     z-index: 8;
 }
 
-.intro.hidden + .hero-header {
+.hero-header.visible {
     opacity: 1;
-    transition: opacity 1s ease-in;
 }
+
 
 /* Name Container: Animates first and last names in the header */
 .name-container {
